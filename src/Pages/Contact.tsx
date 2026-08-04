@@ -124,9 +124,7 @@ export default function Contact() {
                         </a>
                       </div>
 
-                      <p className="mt-2 text-xs text-[var(--dark-gray)]">
-                        Tonny Kosgey — Chief Executive Officer
-                      </p>
+                    
                     </div>
                   </li>
                 </ul>

@@ -9,6 +9,10 @@ import {
 } from "lucide-react";
 
 import { FadeIn, SectionHeader } from "@/layouts/Section";
+import image1 from "../assets/image1.jpeg";
+import image2 from "../assets/image2.jpeg";
+import image3 from "../assets/image3.jpeg";
+import image4 from "../assets/image4.jpeg";
 
 const stats = [
   {
@@ -52,6 +56,7 @@ const stats = [
 const projects = [
   {
     title: "Murang'a County — County-Wide Digital Transformation",
+    images: [image1, image2, image3, image4],
     industry: "County Government",
     client: "Murang'a County Government",
     challenge:
@@ -88,6 +93,7 @@ const projects = [
   },
   {
     title: "Wajir County — Revenue Collection & Management System",
+    images: [image1, image2, image3, image4],
     industry: "County Government",
     client: "Wajir County Government",
     challenge:
@@ -116,6 +122,7 @@ const projects = [
   },
   {
     title: "Embu County — Revenue, Lands & Financial Systems",
+    images: [image1, image2, image3, image4],
     industry: "County Government",
     client: "Embu County Government",
     challenge:
@@ -145,6 +152,7 @@ const projects = [
   },
   {
     title: "JOOTRH — Hospital ERP Deployment",
+    images: [image1, image2, image3, image4],
     industry: "National Referral Hospital",
     client:
       "Jaramogi Oginga Odinga Teaching & Referral Hospital",
@@ -174,6 +182,7 @@ const projects = [
   },
   {
     title: "Kisumu County — Multi-Facility Hospital ERP Rollout",
+    images: [image1, image2, image3, image4],
     industry: "County Health",
     client: "Kisumu County Government",
     challenge:
@@ -276,19 +285,22 @@ export default function Portfolio() {
               <div className="lg:col-span-5">
                 <div className="aspect-[4/3] overflow-hidden rounded-2xl bg-gradient-to-br from-[var(--navy)] via-[var(--blue-brand)] to-[var(--lime-brand)]">
                   <div className="grid h-full grid-cols-2 gap-2 p-4">
-                    {[0, 1, 2, 3].map((i) => (
-                      <div
-                        key={i}
-                        className="rounded-xl bg-white/90"
+                    {p.images.map((image, index) => (
+                      <img
+                        key={index}
+                        src={image}
+                        alt={`${p.title} ${index + 1}`}
+                        className="h-full w-full rounded-xl object-cover"
                       />
                     ))}
                   </div>
                 </div>
 
                 <p className="mt-3 text-center text-xs text-[var(--dark-gray)]">
-                  Project gallery placeholder
+                  {p.title} Gallery
                 </p>
               </div>
+             
 
               <div className="lg:col-span-7">
                 <p className="text-xs font-bold uppercase tracking-widest text-[var(--blue-brand)]">
