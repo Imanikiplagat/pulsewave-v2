@@ -1,4 +1,4 @@
-# 🌐 PulseWave
+# 🌐 PulseWave Technologies
 
 > Transforming Public Service Delivery Through Smart Digital Solutions
 
@@ -94,6 +94,7 @@ pulsewave/
 │   ├── styles/
 │   ├── types/
 │   └── utils/
+|   └── modules/
 │
 ├── package.json
 ├── tsconfig.json
