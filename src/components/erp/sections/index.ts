@@ -1,0 +1,11 @@
+export { TrustedBy } from "./TrustedBy";
+export { ChallengesSection } from "./ChallengesSection";
+export { UnifiedPlatform } from "./UnifiedPlatform";
+export { ModulesSection } from "./ModulesSections"
+export { FeaturesSection } from "./FeaturesSection";
+export { BenefitsSection } from "./BenefitSection";
+export { ImplementationProcess } from "./ErpClosing";
+export { CaseStudy } from "./ErpClosing";
+export { FaqSection } from "./ErpClosing";
+export { ErpCTA } from "./ErpClosing";
+export { ErpFooter } from "./ErpClosing";

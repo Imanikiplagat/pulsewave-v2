@@ -10,20 +10,20 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { FadeIn, SectionHeader } from "@/layouts/Section";
-import image1 from "../assets/image1.jpeg";
-import image2 from "../assets/image2.jpeg";
-import image3 from "../assets/image3.jpeg";
-import image4 from "../assets/image4.jpeg";
-import image5 from "../assets/image5.jpeg";
-import image6 from "../assets/image6.jpeg";
-import image7 from "../assets/image7.jpeg";
-import image8 from "../assets/image8.jpeg";
-import image9 from "../assets/image9.jpeg";
-import image10 from "../assets/image10.jpeg";
-import image11 from "../assets/image11.jpeg";
-import image12 from "../assets/image12.jpeg";
-import image13 from "../assets/image13.jpeg";
-import image14 from "../assets/image14.jpeg";
+import image1 from "../assets/portfolio/image1.jpeg";
+import image2 from "../assets/portfolio/image2.jpeg";
+import image3 from "../assets/portfolio/image3.jpeg";
+import image4 from "../assets/portfolio/image4.jpeg";
+import image5 from "../assets/portfolio/image5.jpeg";
+import image6 from "../assets/portfolio/image6.jpeg";
+import image7 from "../assets/portfolio/image7.jpeg";
+import image8 from "../assets/portfolio/image8.jpeg";
+import image9 from "../assets/portfolio/image9.jpeg";
+import image10 from "../assets/portfolio/image10.jpeg";
+import image11 from "../assets/portfolio/image11.jpeg";
+import image12 from "../assets/portfolio/image12.jpeg";
+import image13 from "../assets/portfolio/image13.jpeg";
+import image14 from "../assets/portfolio/image14.jpeg";
 
 const stats = [
   {

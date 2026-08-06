@@ -1,7 +1,7 @@
 const logos = [
   {
     name: "Murang'a County",
-    src: "muranga.png",
+    src: "/muranga.png",
   },
   {
     name: "Wajir County",
@@ -9,19 +9,15 @@ const logos = [
   },
   {
     name: "Embu County",
-    src: "embu.png",
+    src: "/embu.png",
   },
   {
     name: "Kisumu County",
-    src: "kisumu.png",
+    src: "/kisumu.png",
   },
   {
-    name: "JOOTRH",
-    src: "muranga.png",
-  },
-  {
-    name: "Kiambu County",
-    src: "jaramogi.png",
+    name: "Jaramogi Oginga Odinga Teaching and Referral Hospital",
+    src: "/jaramogi.png",
   },
 ];
 

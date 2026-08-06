@@ -6,6 +6,7 @@ import Home from "@/Pages/Home";
 import About from "@/Pages/About";
 import Portfolio from "@/Pages/Portfolio";
 import Contact from "@/Pages/Contact";
+import Erp from "@/Pages/modules/ERP";
 
 export default function App() {
   return (
@@ -15,8 +16,9 @@ export default function App() {
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="portfolio" element={<Portfolio />} />
-          <Route path="contact" element={<Contact />} />
+          <Route path="contact" element={<Contact />} />         
         </Route>
+         <Route path="solutions/erp" element={<Erp />} />
       </Routes>
     </BrowserRouter>
   );
