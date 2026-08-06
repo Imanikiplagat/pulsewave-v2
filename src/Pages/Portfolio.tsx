@@ -6,13 +6,24 @@ import {
   Building2,
   Award,
   Server,
+  ChevronDown,
 } from "lucide-react";
-
+import { useState } from "react";
 import { FadeIn, SectionHeader } from "@/layouts/Section";
 import image1 from "../assets/image1.jpeg";
 import image2 from "../assets/image2.jpeg";
 import image3 from "../assets/image3.jpeg";
 import image4 from "../assets/image4.jpeg";
+import image5 from "../assets/image5.jpeg";
+import image6 from "../assets/image6.jpeg";
+import image7 from "../assets/image7.jpeg";
+import image8 from "../assets/image8.jpeg";
+import image9 from "../assets/image9.jpeg";
+import image10 from "../assets/image10.jpeg";
+import image11 from "../assets/image11.jpeg";
+import image12 from "../assets/image12.jpeg";
+import image13 from "../assets/image13.jpeg";
+import image14 from "../assets/image14.jpeg";
 
 const stats = [
   {
@@ -20,36 +31,42 @@ const stats = [
     value: "6+",
     label:
       "County governments & national/teaching referral hospitals served",
+    detail: "PulseWave has delivered digital transformation solutions to multiple county governments and national referral hospitals, demonstrating our expertise in public-sector digitization.",  
   },
   {
     icon: TrendingUp,
     value: "7×",
     label:
-      "Wajir County revenue growth — KES 46M (FY22/23) → KES 331M (FY24/25)",
+      "Wajir County revenue growth ",
+    detail: "Wajir County experienced a remarkable 7× growth in revenue over two years, increasing from KES 46M in FY22/23 to KES 331M in FY24/25, showcasing the effectiveness of our integrated revenue collection system.",  
   },
   {
     icon: TrendingUp,
-    value: "4×+",
+    value: "4×",
     label:
-      "Embu County revenue growth — KES 400M → KES 1.68B (FY25/26)",
+      "Embu County revenue growth",
+    detail: "Embu County saw a significant 4×+ growth in revenue, increasing from KES 400M to KES 1.68B by FY25/26, highlighting the success of our integrated revenue management approach.",  
   },
   {
     icon: TrendingUp,
     value: "+23%",
     label:
-      "Murang'a County revenue — KES 746M (FY24/25) → KES 917M (FY25/26)",
+      "Murang'a County revenue growth",
+    detail: "Murang'a County saw a 23% increase in revenue, going from KES 746M in FY24/25 to KES 917M in FY25/26, demonstrating the impact of our digital transformation initiatives.",  
   },
   {
     icon: Server,
     value: "170",
     label:
       "Facilities on our procurement system — Murang'a County",
+    detail: "Murang'a County has successfully implemented our procurement system across 170 facilities, streamlining procurement processes and enhancing operational efficiency.",
   },
   {
     icon: Server,
     value: "156",
     label:
       "Hospitals running our ERP — Kisumu County",
+    detail: "Kisumu County has deployed our hospital ERP across 156 hospitals, standardizing operations and improving management of healthcare services.",
   },
 ];
 
@@ -93,7 +110,7 @@ const projects = [
   },
   {
     title: "Wajir County — Revenue Collection & Management System",
-    images: [image1, image2, image3, image4],
+    images: [image11, image14, image7, image12],
     industry: "County Government",
     client: "Wajir County Government",
     challenge:
@@ -122,7 +139,7 @@ const projects = [
   },
   {
     title: "Embu County — Revenue, Lands & Financial Systems",
-    images: [image1, image2, image3, image4],
+    images: [image9, image10, image5, image4],
     industry: "County Government",
     client: "Embu County Government",
     challenge:
@@ -152,7 +169,7 @@ const projects = [
   },
   {
     title: "JOOTRH — Hospital ERP Deployment",
-    images: [image1, image2, image3, image4],
+    images: [image8, image13, image6, image8],
     industry: "National Referral Hospital",
     client:
       "Jaramogi Oginga Odinga Teaching & Referral Hospital",
@@ -182,7 +199,7 @@ const projects = [
   },
   {
     title: "Kisumu County — Multi-Facility Hospital ERP Rollout",
-    images: [image1, image2, image3, image4],
+    images: [image13, image6, image8, image13],
     industry: "County Health",
     client: "Kisumu County Government",
     challenge:
@@ -211,6 +228,12 @@ const projects = [
 ];
 
 export default function Portfolio() {
+  const [expanded, setExpanded] = useState<number | null>(null);
+
+const toggleCard = (index: number) => {
+  setExpanded((prev) => (prev === index ? null : index));
+};
+
   return (
     <div>
       <section style={{ background: "var(--gradient-hero)" }}>
@@ -245,24 +268,75 @@ export default function Portfolio() {
         </FadeIn>
 
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {stats.map((s, i) => (
-            <FadeIn key={s.label} delay={i * 0.05}>
-              <div className="h-full rounded-2xl border border-[var(--color-border)] bg-white p-6 shadow-[var(--shadow-card)]">
-                <span className="grid h-10 w-10 place-items-center rounded-lg bg-[var(--navy)] text-white">
-                  <s.icon className="h-5 w-5" />
-                </span>
+  {stats.map((s, i) => (
+    <FadeIn key={s.label} delay={i * 0.05}>
+      <div
+  className="
+    group relative h-full overflow-hidden rounded-2xl
+    border border-[var(--color-border)]
+    bg-gradient-to-br from-white via-white to-slate-50
+    p-8
+    shadow-lg
+    transition-all duration-500
+    hover:-translate-y-2
+    hover:shadow-2xl
+    hover:border-[var(--primary)]
+  "
+>
+  {/* Corner glow */}
+  <span className="pointer-events-none absolute right-0 top-0 h-24 w-24 rounded-bl-full bg-[var(--primary)]/5 transition-colors duration-500 group-hover:bg-[var(--primary)]/10" />
 
-                <p className="mt-4 text-4xl font-black text-[var(--navy)]">
-                  {s.value}
-                </p>
+  <div className="relative z-10">
+    {/* Icon */}
+    <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--primary)]/10 text-[var(--primary)] transition-all duration-300 group-hover:scale-110">
+      <s.icon className="h-6 w-6" />
+    </div>
 
-                <p className="mt-2 text-sm text-[var(--dark-gray)]">
-                  {s.label}
-                </p>
-              </div>
-            </FadeIn>
-          ))}
+    {/* Animated Number */}
+    <h3 className="text-5xl font-black leading-none text-[var(--navy)]">
+      {s.value}
+    </h3>
+
+    {/* Label */}
+    <p className="mt-4 text-sm leading-relaxed text-[var(--dark-gray)]">
+      {s.label}
+    </p>
+
+    {/* Expandable details */}
+    <div className="mt-8 border-t border-[var(--color-border)] pt-5">
+      <button
+        onClick={() => toggleCard(i)}
+        className="flex items-center gap-2 text-sm font-medium text-[var(--primary)] transition-colors hover:text-[var(--navy)]"
+      >
+        {expanded === i ? "Hide details" : "Performance details"}
+
+        <ChevronDown
+          className={`h-4 w-4 transition-transform ${
+            expanded === i ? "rotate-180" : ""
+          }`}
+        />
+      </button>
+
+      <div
+        className={`grid transition-all duration-300 ${
+          expanded === i ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+        }`}
+      >
+        <div className="overflow-hidden">
+          <p className="mt-4 rounded-lg bg-[var(--primary)]/5 p-4 text-sm leading-relaxed text-[var(--dark-gray)]">
+            {s.detail}
+          </p>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+     
+    </FadeIn>
+      ))}
+</div>
+
+
                 <FadeIn delay={0.15}>
           <div className="mt-8 flex items-start gap-3 rounded-2xl border border-[var(--lime-brand)]/50 bg-[var(--lime-brand)]/15 p-5">
             <Award className="mt-0.5 h-5 w-5 text-[var(--navy)]" />
@@ -394,40 +468,7 @@ export default function Portfolio() {
           </FadeIn>
         ))}
       </section>
-            {/* Expanding footprint */}
-      <section className="container-page py-16">
-        <FadeIn>
-          <div className="rounded-3xl border border-[var(--color-border)] bg-[var(--light-gray)] p-8 md:p-10">
-            <SectionHeader
-              eyebrow="Expanding public-sector footprint"
-              title="New engagements onboarding."
-            />
 
-            <div className="mt-8 grid gap-6 md:grid-cols-2">
-              <div className="rounded-2xl border border-[var(--color-border)] bg-white p-6">
-                <h4 className="text-lg font-bold text-[var(--navy)]">
-                  Othaya Level 6 Hospital
-                </h4>
-
-                <p className="mt-2 text-sm text-[var(--dark-gray)]">
-                  Requested an ERP modeled on our JOOTRH deployment.
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-[var(--color-border)] bg-white p-6">
-                <h4 className="text-lg font-bold text-[var(--navy)]">
-                  Kiambu County Government
-                </h4>
-
-                <p className="mt-2 text-sm text-[var(--dark-gray)]">
-                  Expressed interest in replicating the digital
-                  transformation model built for Murang'a County.
-                </p>
-              </div>
-            </div>
-          </div>
-        </FadeIn>
-      </section>
 
       {/* Why PulseWave */}
 

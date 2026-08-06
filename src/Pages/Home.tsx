@@ -232,17 +232,17 @@ export default function Home() {
             {
               v: "7×",
               l: "Wajir County revenue growth",
-              s: "KES 46M (FY22/23) → KES 331M (FY24/25)",
+              s: "KES 46M  → KES 331M ",
             },
             {
-              v: "4×+",
+              v: "4×",
               l: "Embu County revenue growth",
-              s: "KES 400M (FY22/23) → KES 1.68B (FY25/26)",
+              s: "KES 400M  → KES 1.68B ",
             },
             {
               v: "+23%",
               l: "Murang'a County revenue",
-              s: "KES 746M (FY24/25) → KES 917M (FY25/26)",
+              s: "KES 746M  → KES 917M ",
             },
             {
               v: "170",
@@ -261,19 +261,51 @@ export default function Home() {
             },
           ].map((k, i) => (
             <FadeIn key={k.l} delay={i * 0.05}>
-              <div className="h-full rounded-2xl border border-[var(--color-border)] bg-white p-6 shadow-[var(--shadow-card)]">
-                <p className="text-5xl font-black text-[var(--navy)]">
-                  {k.v}
-                </p>
+<div
+  className="
+    group relative h-full overflow-hidden rounded-2xl
+    border border-[var(--color-border)]
+    bg-gradient-to-br from-white via-white to-slate-50
+    p-8
+    shadow-lg
+    transition-all duration-500
+    hover:-translate-y-2
+    hover:shadow-2xl
+    hover:border-[var(--blue-brand)]
+  "
+>
+  {/* Corner glow */}
+  <span className="pointer-events-none absolute right-0 top-0 h-24 w-24 rounded-bl-full bg-[var(--blue-brand)]/5 transition-colors duration-500 group-hover:bg-[var(--blue-brand)]/10" />
 
-                <p className="mt-3 font-bold text-[var(--navy)]">
-                  {k.l}
-                </p>
+  <div className="relative z-10">
+    {/* Small badge */}
+    <span className="inline-flex rounded-full bg-[var(--blue-brand)]/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[var(--blue-brand)]">
+      Impact
+    </span>
 
-                <p className="mt-1 text-sm text-[var(--dark-gray)]">
-                  {k.s}
-                </p>
-              </div>
+    {/* Statistic */}
+    <h3 className="mt-6 text-6xl font-black leading-none text-[var(--navy)] transition-transform duration-300 group-hover:scale-105">
+      {k.v}
+    </h3>
+
+    {/* Title */}
+    <p className="mt-5 text-lg font-bold leading-snug text-[var(--navy)]">
+      {k.l}
+    </p>
+
+    {/* Description */}
+    <p className="mt-2 text-sm leading-relaxed text-[var(--dark-gray)]">
+      {k.s}
+    </p>
+
+    {/* Bottom accent */}
+    <div className="mt-8 border-t border-[var(--color-border)] pt-4">
+      <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--blue-brand)]">
+        PulseWave Impact
+      </span>
+    </div>
+  </div>
+</div>
             </FadeIn>
           ))}
         </div>
