@@ -8,9 +8,7 @@ import {
   Send,
 } from "lucide-react";
 import {
-  FaFacebook,
   FaFacebookF,
-  FaLinkedin,
   FaLinkedinIn,
   FaXTwitter,
 } from "react-icons/fa6";
@@ -37,18 +35,86 @@ export default function Contact() {
   } = useForm<FormData>();
 
   const [sent, setSent] = useState(false);
+  const [error, setError] = useState("");
 
   const onSubmit = async (data: FormData) => {
-    console.log("Contact form submission", data);
+    setSent(false);
+    setError("");
 
-    await new Promise((resolve) => setTimeout(resolve, 600));
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
 
-    setSent(true);
-    reset();
+    if (!accessKey) {
+      console.error("Web3Forms access key is missing.");
+      setError("Email service is not configured. Please try again later.");
+      return;
+    }
+
+    const formData = new FormData();
+
+    formData.append("access_key", accessKey);
+
+    formData.append("name", data.name);
+    formData.append("email", data.email);
+    formData.append("company", data.company || "");
+    formData.append("phone", data.phone || "");
+    formData.append("message", data.message);
+
+    formData.append(
+      "subject",
+      `New Contact Form Submission - ${
+        data.company || data.name
+      }`
+    );
+
+    formData.append(
+      "from_name",
+      "PulseWave Technologies Website"
+    );
+
+    try {
+      const response = await fetch(
+        "https://api.web3forms.com/submit",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
+
+      const result = await response.json();
+
+      console.log("Web3Forms response:", result);
+
+      if (result.success) {
+        setSent(true);
+        reset();
+
+        // Remove success message after 5 seconds
+        setTimeout(() => {
+          setSent(false);
+        }, 5000);
+      } else {
+        console.error(
+          "Web3Forms error:",
+          result.message
+        );
+
+        setError(
+          result.message ||
+            "Unable to send your message. Please try again."
+        );
+      }
+    } catch (error) {
+      console.error("Contact form error:", error);
+
+      setError(
+        "Unable to send your message. Please check your connection and try again."
+      );
+    }
   };
 
   return (
     <div>
+      {/* Hero */}
       <section style={{ background: "var(--gradient-hero)" }}>
         <div className="container-page py-20 md:py-24">
           <span className="inline-flex items-center gap-2 rounded-full border border-[var(--navy)]/15 bg-white px-3 py-1 text-xs font-bold uppercase tracking-widest text-[var(--navy)]">
@@ -58,7 +124,10 @@ export default function Contact() {
 
           <h1 className="mt-6 max-w-4xl text-5xl font-black leading-[1.05] text-[var(--navy)] sm:text-6xl md:text-7xl">
             Let's build something{" "}
-            <span className="underline-lime">meaningful</span>.
+            <span className="underline-lime">
+              meaningful
+            </span>
+            .
           </h1>
 
           <p className="mt-6 max-w-2xl text-lg text-[var(--dark-gray)]">
@@ -68,8 +137,10 @@ export default function Contact() {
         </div>
       </section>
 
+      {/* Contact Section */}
       <section className="container-page py-14 md:py-20">
         <div className="grid items-start gap-10 lg:grid-cols-12 lg:gap-12">
+          {/* Contact Information */}
           <div className="min-w-0 lg:col-span-5">
             <FadeIn>
               <div className="space-y-5">
@@ -79,6 +150,7 @@ export default function Contact() {
                 />
 
                 <ul className="mt-4 space-y-4">
+                  {/* Address */}
                   <li className="flex items-start gap-3 rounded-2xl border border-[var(--color-border)] bg-white p-5">
                     <MapPin className="mt-0.5 h-5 w-5 text-[var(--blue-brand)]" />
 
@@ -93,6 +165,7 @@ export default function Contact() {
                     </div>
                   </li>
 
+                  {/* Phone */}
                   <li className="flex items-start gap-3 rounded-2xl border border-[var(--color-border)] bg-white p-5">
                     <Phone className="mt-0.5 h-5 w-5 text-[var(--blue-brand)]" />
 
@@ -101,12 +174,16 @@ export default function Contact() {
                         Phone
                       </p>
 
-                      <p className="text-sm text-[var(--dark-gray)]">
+                      <a
+                        href="tel:+254796222111"
+                        className="text-sm text-[var(--dark-gray)] hover:text-[var(--navy)]"
+                      >
                         +254 796 222 111
-                      </p>
+                      </a>
                     </div>
                   </li>
 
+                  {/* Email */}
                   <li className="flex items-start gap-3 rounded-2xl border border-[var(--color-border)] bg-white p-5">
                     <Mail className="mt-0.5 h-5 w-5 text-[var(--blue-brand)]" />
 
@@ -115,32 +192,32 @@ export default function Contact() {
                         Email
                       </p>
 
-                      <div className="flex flex-col text-sm text-[var(--dark-gray)]">
-                        <a
-                          href="mailto:info@pulsewavetechnologies.com"
-                          className="break-all hover:text-[var(--navy)]"
-                        >
-                          info@pulsewavetechnologies.com
-                        </a>
-                      </div>
-
-                    
+                      <a
+                        href="mailto:info@pulsewavetechnologies.com"
+                        className="break-all text-sm text-[var(--dark-gray)] hover:text-[var(--navy)]"
+                      >
+                        info@pulsewavetechnologies.com
+                      </a>
                     </div>
                   </li>
                 </ul>
 
+                {/* Social Media */}
                 <div className="flex gap-3">
-                  {[FaLinkedinIn, FaXTwitter, FaFacebookF].map((Icon, index) => (
-                    <a
-                      key={index}
-                      href="#"
-                      className="grid h-10 w-10 place-items-center rounded-full border border-[var(--color-border)] bg-white text-[var(--navy)] transition hover:bg-[var(--navy)] hover:text-white"
-                    >
-                      <Icon className="h-4 w-4" />
-                    </a>
-                  ))}
+                  {[FaLinkedinIn, FaXTwitter, FaFacebookF].map(
+                    (Icon, index) => (
+                      <a
+                        key={index}
+                        href="#"
+                        className="grid h-10 w-10 place-items-center rounded-full border border-[var(--color-border)] bg-white text-[var(--navy)] transition hover:bg-[var(--navy)] hover:text-white"
+                      >
+                        <Icon className="h-4 w-4" />
+                      </a>
+                    )
+                  )}
                 </div>
 
+                {/* Google Maps */}
                 <div className="overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-muted)] shadow-[var(--shadow-card)]">
                   <iframe
                     title="PulseWave Technologies office location"
@@ -155,6 +232,7 @@ export default function Contact() {
             </FadeIn>
           </div>
 
+          {/* Contact Form */}
           <div className="min-w-0 lg:col-span-7">
             <FadeIn delay={0.1}>
               <form
@@ -169,6 +247,7 @@ export default function Contact() {
                   All fields marked * are required.
                 </p>
 
+                {/* Name + Email */}
                 <div className="mt-6 grid gap-4 sm:grid-cols-2">
                   <Field
                     label="Full name *"
@@ -187,7 +266,7 @@ export default function Contact() {
                     label="Work email *"
                     error={errors.email?.message}
                   >
-                                        <input
+                    <input
                       type="email"
                       {...register("email", {
                         required: "Email is required",
@@ -201,6 +280,7 @@ export default function Contact() {
                     />
                   </Field>
 
+                  {/* Company */}
                   <Field label="Company">
                     <input
                       {...register("company")}
@@ -209,6 +289,7 @@ export default function Contact() {
                     />
                   </Field>
 
+                  {/* Phone */}
                   <Field label="Phone">
                     <input
                       {...register("phone")}
@@ -218,6 +299,7 @@ export default function Contact() {
                   </Field>
                 </div>
 
+                {/* Message */}
                 <div className="mt-4">
                   <Field
                     label="How can we help? *"
@@ -226,7 +308,8 @@ export default function Contact() {
                     <textarea
                       rows={6}
                       {...register("message", {
-                        required: "Please tell us about your project",
+                        required:
+                          "Please tell us about your project",
                       })}
                       className={inputCls}
                       placeholder="Tell us about your project..."
@@ -234,10 +317,18 @@ export default function Contact() {
                   </Field>
                 </div>
 
+                {/* Error */}
+                {error && (
+                  <div className="mt-4 rounded-lg bg-red-50 px-4 py-3 text-sm font-medium text-red-700">
+                    {error}
+                  </div>
+                )}
+
+                {/* Submit */}
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[var(--navy)] px-6 py-3.5 font-semibold text-white shadow-[var(--shadow-elegant)] transition hover:bg-[color-mix(in_oklab,var(--navy)_88%,white)] disabled:opacity-70 sm:w-auto"
+                  className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[var(--navy)] px-6 py-3.5 font-semibold text-white shadow-[var(--shadow-elegant)] transition hover:bg-[color-mix(in_oklab,var(--navy)_88%,white)] disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
                 >
                   {isSubmitting ? (
                     "Sending..."
@@ -249,6 +340,7 @@ export default function Contact() {
                   )}
                 </button>
 
+                {/* Success */}
                 {sent && (
                   <p className="mt-4 inline-flex items-center gap-2 rounded-lg bg-[var(--lime-brand)]/40 px-3 py-2 text-sm font-semibold text-[var(--navy)]">
                     <CheckCircle2 className="h-4 w-4" />
@@ -270,7 +362,11 @@ type FieldProps = {
   children: React.ReactNode;
 };
 
-function Field({ label, error, children }: FieldProps) {
+function Field({
+  label,
+  error,
+  children,
+}: FieldProps) {
   return (
     <label className="block">
       <span className="mb-1.5 block text-sm font-semibold text-[var(--navy)]">
