@@ -50,16 +50,7 @@ export const solutions: Solution[] = [
     [{ client: "National Distribution Group", result: "Reduced order-to-cash cycle by 42%." }, { client: "Regional Manufacturer", result: "Consolidated 6 legacy systems into one ERP." }],
     [{ q: "How long does implementation take?", a: "Typical rollouts run 8–16 weeks depending on scope and integrations." }, { q: "Is it cloud or on-premise?", a: "Both. PulseWave ERP is deployable on cloud, on-premise or hybrid." }]),
 
-  make("inventory", "Inventory Management", "Precision stock control across every location.", "Operations", Boxes,
-    "Track every SKU across warehouses, branches and in-transit — with barcode, batch and serial tracking, automated reordering and live valuation.",
-    ["Multi-warehouse & bin locations", "Barcode & QR scanning", "Batch, serial & expiry tracking", "Automated reorder points", "Cycle counting & stock takes", "Live stock valuation (FIFO/WAC)"],
-    ["Zero stock-outs", "Lower carrying costs", "Full traceability", "Faster fulfilment"],
-    ["Stock Master", "Receipts & Issues", "Transfers", "Adjustments", "Reorder", "Reporting"],
-    ["Retail", "Manufacturing", "Pharma", "FMCG", "Logistics"],
-    [{ client: "Retail Chain (28 branches)", result: "Cut stock-outs by 63% in six months." }],
-    [{ q: "Does it integrate with our POS?", a: "Yes — real-time integration with PulseWave POS and third-party POS." }]),
-
-  make("procurement", "Procurement", "Source, buy and pay — smarter.", "Operations", ShoppingCart,
+   make("procurement", "Procurement", "Source, buy and pay — smarter.", "Operations", ShoppingCart,
     "Digitize the entire source-to-pay cycle with requisitions, RFQs, vendor scoring, purchase orders and 3-way matching.",
     ["Requisition workflows", "RFQ & vendor bidding", "Vendor management & scoring", "Purchase orders", "3-way match invoicing", "Contract & catalog management"],
     ["Better vendor pricing", "Full audit trail", "Faster PR-to-PO cycle", "Reduced maverick spend"],

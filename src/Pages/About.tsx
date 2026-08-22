@@ -183,6 +183,82 @@ export default function About() {
             </Link>
           </div>
         </section>
+        {/* =========================================================
+    EXPLORE SOLUTIONS
+========================================================= */}
+<section className="bg-[var(--light-gray)] py-24 lg:py-28">
+  <div className="container-page">
+
+    <div className="grid items-center gap-12 lg:grid-cols-[1fr_auto]">
+
+      <FadeIn>
+        <div className="max-w-3xl">
+
+          <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-[var(--blue-brand)]">
+            <span className="h-1.5 w-8 rounded-full bg-[var(--lime-brand)]" />
+            What we do
+          </span>
+
+          <h2 className="mt-5 text-4xl font-black leading-tight text-[var(--navy)] sm:text-5xl">
+            Technology built around
+            <br />
+            <span className="text-[var(--blue-brand)]">
+              your organisation.
+            </span>
+          </h2>
+
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-[var(--dark-gray)]">
+            From enterprise ERP and revenue management to healthcare,
+            digital services and intelligent technology, PulseWave builds
+            connected systems that help organisations work smarter,
+            operate efficiently and serve their people better.
+          </p>
+
+        </div>
+      </FadeIn>
+
+      <FadeIn delay={0.1}>
+        <Link
+          to="/solutions"
+          className="group inline-flex shrink-0 items-center gap-3 rounded-xl bg-[var(--navy)] px-6 py-4 text-sm font-bold text-white shadow-[var(--shadow-card)] transition duration-300 hover:-translate-y-1 hover:bg-[var(--blue-brand)]"
+        >
+          Explore our solutions
+
+          <ArrowRight
+            className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+          />
+        </Link>
+      </FadeIn>
+
+    </div>
+
+    {/* Small solution categories */}
+    <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {[
+        "Enterprise ERP",
+        "Revenue Collection",
+        "Healthcare",
+        "Procurement",
+        "Real Estate Management",
+        "Digital Services",
+      ].map((item, index) => (
+        <FadeIn
+          key={item}
+          delay={index * 0.04}
+        >
+          <div className="flex items-center gap-3 rounded-xl border border-[var(--color-border)] bg-white px-5 py-4 shadow-sm">
+            <span className="h-2 w-2 rounded-full bg-[var(--lime-brand)]" />
+
+            <span className="text-sm font-semibold text-[var(--navy)]">
+              {item}
+            </span>
+          </div>
+        </FadeIn>
+      ))}
+    </div>
+
+  </div>
+</section>
       </div>
     </>
   );

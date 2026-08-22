@@ -103,7 +103,7 @@ const testimonials = [
 ];
 
 export default function Home() {
-  const featuredSolutions = solutions.slice(0, 8);
+  const featuredSolutions = solutions.slice(0, 6);
 
   return (
     <div>
