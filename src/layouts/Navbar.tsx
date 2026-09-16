@@ -172,7 +172,7 @@ export function Navbar() {
                                 {g.items.map((it) => (
                                   <Link
                                     key={`${g.key}-${it.label}`}
-                                    to={`/${it.slug}#${it.hash}`}
+                                    to={`/solutions/${it.slug}#${it.hash}`}
                                     onClick={closeMega}
                                     className="group rounded-xl px-3 py-2 hover:bg-[var(--light-gray)]"
                                   >

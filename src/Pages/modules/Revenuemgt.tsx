@@ -1,24 +1,4 @@
 import { useEffect } from "react";
-import {
-  ArrowRight,
-  BarChart3,
-  Check,
-  ChevronRight,
-  CreditCard,
-  FileText,
-  Globe2,
-  Landmark,
-  Menu,
-  MessageCircle,
-  Phone,
-  Receipt,
-  Smartphone,
-  Users,
-  WalletCards,
-  X,
-} from "lucide-react";
-import { Link } from "react-router-dom";
-
 import RevenueNavbar from "@/components/Revenue-managemen/RevenueNav";
 import RevenueFooter from "@/components/Revenue-managemen/footer";
 import RevenueHero from "@/components/Revenue-managemen/RevenueHero";

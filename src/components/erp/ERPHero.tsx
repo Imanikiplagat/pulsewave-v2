@@ -19,7 +19,7 @@ function BrowserMockup() {
         <span className="h-2.5 w-2.5 rounded-full bg-dark-gray/25" aria-hidden />
         <span className="h-2.5 w-2.5 rounded-full bg-dark-gray/25" aria-hidden />
         <span className="ml-3 truncate rounded-md border border-border bg-card px-3 py-1 text-[11px] text-dark-gray">
-          pulsewave.co.ke/dashboard
+          pulsewaveTechnologies.com/dashboard
         </span>
       </div>
 
@@ -108,13 +108,7 @@ export function ErpHero() {
 
       <div className="container-page grid items-center gap-14 pt-32 pb-20 lg:grid-cols-[1.02fr_0.98fr] lg:pt-40 lg:pb-28">
         <div className="min-w-0">
-          <motion.span
-            {...fade(0)}
-            className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-navy shadow-card"
-          >
-            <span className="h-1.5 w-1.5 rounded-full bg-lime-brand" aria-hidden />
-            PulseWave Technologies · ERP
-          </motion.span>
+        
 
           <motion.h1
             {...fade(0.08)}
@@ -126,7 +120,7 @@ export function ErpHero() {
 
           <motion.p
             {...fade(0.16)}
-            className="mt-6 max-w-xl text-base leading-relaxed text-gray-800 sm:text-lg"
+            className="mt-6 max-w-xl text-base leading-relaxed text-white sm:text-lg"
           >
             One secure platform that unifies finance, procurement, HR, inventory, payroll, assets
             and reporting — giving counties and referral hospitals a single, auditable source of
@@ -162,38 +156,15 @@ export function ErpHero() {
               <li key={l} className="min-w-0">
                 <Icon className="h-4 w-4 text-lime-brand" aria-hidden />
                 <p className="mt-2 text-lg font-extrabold text-white">{v}</p>
-                <p className="text-xs text-dark-gray">{l}</p>
+                <p className="text-xs text-white">{l}</p>
               </li>
             ))}
           </motion.ul>
         </div>
 
         <ErpReveal className="relative min-w-0" delay={0.1}>
-          <BrowserMockup />
+          <BrowserMockup />       
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.9, duration: 0.6 }}
-            className="absolute -left-4 bottom-10 hidden w-52 rounded-2xl border border-border bg-card/90 p-4 shadow-elegant backdrop-blur-xl sm:block"
-          >
-            <p className="text-[10px] uppercase tracking-wider text-dark-gray">Approval time</p>
-            <p className="mt-1 text-xl font-extrabold text-navy">-64%</p>
-            <p className="text-[11px] font-medium text-blue-brand">vs. manual workflow</p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.05, duration: 0.6 }}
-            className="absolute -right-3 -top-6 hidden w-48 rounded-2xl border border-border bg-card/90 p-4 shadow-elegant backdrop-blur-xl lg:block"
-          >
-            <p className="text-[10px] uppercase tracking-wider text-dark-gray">Audit trail</p>
-            <p className="mt-1 text-sm font-bold text-navy">100% traceable</p>
-            <span className="mt-2 inline-block rounded-full bg-lime-brand px-2 py-0.5 text-[10px] font-bold text-navy">
-              Compliant
-            </span>
-          </motion.div>
         </ErpReveal>
       </div>
     </section>

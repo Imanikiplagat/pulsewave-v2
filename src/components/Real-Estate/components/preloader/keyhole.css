@@ -1,0 +1,182 @@
+/* /* /* =========================================================
+   KEYHOLE PRELOADER
+   ========================================================= */
+
+.keyhole-loader {
+  position: fixed;
+  inset: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  z-index: 9999;
+
+  overflow: hidden;
+
+  background: #07130f;
+
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   STATIC HERO IMAGE
+   ========================================================= */
+
+.keyhole-hero {
+  position: absolute;
+  inset: 0;
+
+  z-index: 0;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+}
+
+.keyhole-hero img {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center center;
+
+  /*
+   * IMPORTANT:
+   * The image NEVER moves.
+   */
+
+  transform: none !important;
+
+  filter: none !important;
+}
+
+
+/* =========================================================
+   KEYHOLE MASK
+   ========================================================= */
+
+.keyhole-mask {
+  position: absolute;
+  inset: 0;
+
+  z-index: 2;
+
+  width: 100%;
+  height: 100%;
+
+  pointer-events: none;
+
+  /*
+   * DO NOT USE:
+   *
+   * preserveAspectRatio="none"
+   *
+   * because it turns the circular head into an oval.
+   */
+}
+
+
+/* =========================================================
+   DARK OVERLAY
+   ========================================================= */
+
+.keyhole-dark-layer {
+  fill: #0f172b;
+}
+
+
+/* =========================================================
+   KEYHOLE OPENING
+   ========================================================= */
+
+.keyhole-opening {
+  /*
+   * Keep the geometry perfectly proportional.
+   */
+
+  transform-box: view-box;
+
+  transform-origin: 50% 39%;
+
+  will-change: transform;
+}
+
+
+/* =========================================================
+   TEXT
+   ========================================================= */
+
+.keyhole-content {
+  position: absolute;
+
+  left: 50%;
+  bottom: 10%;
+
+  z-index: 10;
+
+  width: min(90vw, 1000px);
+
+  transform: translateX(-50%);
+
+  text-align: center;
+
+  color: #ffffff;
+
+  pointer-events: none;
+}
+
+.keyhole-subtitle {
+  margin: 0;
+
+  font-family: Inter, sans-serif;
+
+  font-size: clamp(14px, 1.2vw, 20px);
+
+  line-height: 1.5;
+
+  font-weight: 400;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+
+  opacity: 0.8;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .keyhole-content {
+    bottom: 8%;
+
+    width: 90vw;
+  }
+
+  .keyhole-subtitle {
+    font-size: clamp(16px, 5vw, 26px);
+
+    letter-spacing: 0.06em;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .keyhole-loader {
+    display: none;
+  }
+}
+  

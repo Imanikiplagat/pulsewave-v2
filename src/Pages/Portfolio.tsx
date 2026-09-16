@@ -358,13 +358,13 @@ const toggleCard = (index: number) => {
             <article className="grid gap-8 rounded-3xl border border-[var(--color-border)] bg-white p-8 shadow-[var(--shadow-card)] lg:grid-cols-12 lg:p-10">
               <div className="lg:col-span-5">
                 <div className="aspect-[4/3] overflow-hidden rounded-2xl bg-gradient-to-br from-[var(--navy)] via-[var(--blue-brand)] to-[var(--lime-brand)]">
-                  <div className="grid h-full grid-cols-2 gap-2 p-4">
+                  <div className="grid h-full grid-cols-2 gap-2 ">
                     {p.images.map((image, index) => (
                       <img
                         key={index}
                         src={image}
                         alt={`${p.title} ${index + 1}`}
-                        className="h-full w-full rounded-xl object-cover"
+                        className="h-full w-full rounded-xl object-cover p-1"
                       />
                     ))}
                   </div>
