@@ -12,6 +12,8 @@ import Solutions from "@/Pages/SolutionsPage";
 import RealEstate from "@/Pages/modules/Real-estate";
 import { RealEstateDetailPage } from "@/components/Real-Estate/Estatedetail";
 import CustomSoftware from "@/Pages/modules/DigitalServices";
+import HospitalManagement from "@/Pages/modules/Healthcare";
+import Procurement from "@/Pages/modules/Procurement";
 
 export default function App() {
   return (    
@@ -28,7 +30,9 @@ export default function App() {
          <Route path="solutions/erp" element={<Erp />} />
          <Route path="solutions/revenue-management" element={<Revenuemgt />} />
          <Route path="solutions/real-estate" element={<RealEstate />} />
+         <Route path="solutions/hospital-management" element={<HospitalManagement />} />
          <Route path="solutions/custom-software" element={<CustomSoftware />} />
+         <Route path="solutions/procurement" element={<Procurement />} />
          <Route path="/real-estate" element={<RealEstate />} />
          <Route path="/real-estate/property-management"  element={<RealEstateDetailPage type="property-management" />}/>
          <Route
