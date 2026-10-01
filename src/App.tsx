@@ -8,9 +8,10 @@ import Contact from "@/Pages/Contact";
 import Erp from "@/Pages/modules/ERP";
 import NotFound from "@/Pages/pageNotfound";
 import Revenuemgt from "@/Pages/modules/Revenuemgt"
-import Solutions from "./Pages/SolutionsPage";
-import RealEstate from "./Pages/modules/Real-estate";
-import { RealEstateDetailPage } from "./components/Real-Estate/Estatedetail";
+import Solutions from "@/Pages/SolutionsPage";
+import RealEstate from "@/Pages/modules/Real-estate";
+import { RealEstateDetailPage } from "@/components/Real-Estate/Estatedetail";
+import CustomSoftware from "@/Pages/modules/DigitalServices";
 
 export default function App() {
   return (    
@@ -27,14 +28,10 @@ export default function App() {
          <Route path="solutions/erp" element={<Erp />} />
          <Route path="solutions/revenue-management" element={<Revenuemgt />} />
          <Route path="solutions/real-estate" element={<RealEstate />} />
+         <Route path="solutions/custom-software" element={<CustomSoftware />} />
          <Route path="/real-estate" element={<RealEstate />} />
-
-<Route
-  path="/real-estate/property-management"
-  element={<RealEstateDetailPage type="property-management" />}
-/>
-
-<Route
+         <Route path="/real-estate/property-management"  element={<RealEstateDetailPage type="property-management" />}/>
+         <Route
   path="/real-estate/building-approvals"
   element={<RealEstateDetailPage type="building-approvals" />}
 />
