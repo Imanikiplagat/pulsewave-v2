@@ -132,145 +132,112 @@ export default function Procurement() {
   return (
     <div className="min-h-screen bg-[#FFFFFF] text-[#374151]">
       {/* Navbar */}
-      <header className="sticky top-0 z-50 border-b border-[#E5E7EB] bg-[#FFFFFF]/95 backdrop-blur-md">
-        <div className="relative mx-auto flex h-20 max-w-7xl items-center px-6 lg:px-10">
-          <Link
-            to="/"
-            className="inline-flex items-center"
-            onClick={closeMobileMenu}
-          >
-            <img
-              src="/logo.png"
-              alt="PulseWave Technologies"
-              className="h-16 w-auto object-contain"
-            />
-          </Link>
+<header className="sticky top-0 z-50 border-b border-[#E5E7EB] bg-[#FFFFFF]/95 backdrop-blur-md">
+  <div className="relative mx-auto flex h-20 max-w-7xl items-center px-6 lg:px-10">
 
-          <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-8 lg:flex">
-            <Link
-              to="/"
-              className="text-sm font-medium text-[#374151] transition hover:text-[#2563EB]"
-            >
-              Home
-            </Link>
+    {/* Logo */}
+    <Link
+      to="/"
+      onClick={closeMobileMenu}
+      className="flex shrink-0 items-center"
+    >
+      <img
+        src="/logo.png"
+        alt="PulseWave Technologies"
+        className="h-25 w-auto object-contain"
+      />
+    </Link>
 
-            <Link
-              to="/solutions/custom-software"
-              className="text-sm font-medium text-[#374151] transition hover:text-[#2563EB]"
-            >
-              Digital Services
-            </Link>
+    {/* Desktop Navigation - Centered */}
+    <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-8 lg:flex">
+      <Link
+        to="/"
+        className="text-sm font-semibold text-[#071A35] transition hover:text-[#2563EB]"
+      >
+        Home
+      </Link>
 
-            <Link
-              to="/solutions/systems-integration"
-              className="text-sm font-medium text-[#374151] transition hover:text-[#2563EB]"
-            >
-              Systems Integration
-            </Link>
+      <Link
+        to="/solutions"
+        className="text-sm font-semibold text-[#071A35] transition hover:text-[#2563EB]"
+      >
+        Solutions
+      </Link>
 
-            <Link
-              to="/solutions/hospital-management"
-              className="text-sm font-medium text-[#374151] transition hover:text-[#2563EB]"
-            >
-              Healthcare
-            </Link>
+ 
 
-            <Link
-              to="/solutions/procurement"
-              className="text-sm font-medium text-[#2563EB]"
-            >
-              Procurement
-            </Link>
+      <Link
+        to="/about"
+        className="text-sm font-semibold text-[#071A35] transition hover:text-[#2563EB]"
+      >
+        About
+      </Link>
 
-            <Link
-              to="/about"
-              className="text-sm font-medium text-[#374151] transition hover:text-[#2563EB]"
-            >
-              About
-            </Link>
-          </nav>
+     
+    </nav>
 
-          <div className="ml-auto hidden lg:flex">
-            <Link
-              to="/contact"
-              className="rounded-full bg-[#071A35] px-6 py-3 text-sm font-semibold text-[#FFFFFF] transition hover:bg-[#2563EB]"
-            >
-              Start a project
-            </Link>
-          </div>
+    {/* Right CTA */}
+    <div className="ml-auto hidden lg:flex">
+      <Link
+        to="/contact"
+        className="rounded-full bg-[#071A35] px-5 py-2.5 text-sm font-semibold text-[#FFFFFF] transition hover:bg-[#2563EB]"
+      >
+        Start a project
+      </Link>
+    </div>
 
-          <button
-            type="button"
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="ml-auto rounded-lg p-2 text-[#071A35] lg:hidden"
-            aria-label="Toggle menu"
-          >
-            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
+    {/* Mobile menu button */}
+    <button
+      type="button"
+      onClick={() => setMobileOpen(!mobileOpen)}
+      className="ml-auto rounded-lg p-2 text-[#071A35] lg:hidden"
+      aria-label="Toggle menu"
+    >
+      {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+    </button>
+  </div>
 
-        {mobileOpen && (
-          <div className="border-t border-[#E5E7EB] bg-[#FFFFFF] px-6 py-6 lg:hidden">
-            <nav className="flex flex-col gap-5">
-              <Link
-                to="/"
-                onClick={closeMobileMenu}
-                className="text-sm font-medium text-[#374151]"
-              >
-                Home
-              </Link>
+  {/* Mobile Navigation */}
+  {mobileOpen && (
+    <div className="border-t border-[#E5E7EB] bg-[#FFFFFF] lg:hidden">
+      <nav className="flex flex-col px-6 py-5">
+        <Link
+          to="/"
+          onClick={closeMobileMenu}
+          className="border-b border-[#E5E7EB] py-4 text-sm font-semibold text-[#071A35]"
+        >
+          Home
+        </Link>
 
-              <Link
-                to="/solutions/custom-software"
-                onClick={closeMobileMenu}
-                className="text-sm font-medium text-[#374151]"
-              >
-                Digital Services
-              </Link>
+        <Link
+          to="/solutions"
+          onClick={closeMobileMenu}
+          className="border-b border-[#E5E7EB] py-4 text-sm font-semibold text-[#071A35]"
+        >
+          Solutions
+        </Link>
 
-              <Link
-                to="/solutions/systems-integration"
-                onClick={closeMobileMenu}
-                className="text-sm font-medium text-[#374151]"
-              >
-                Systems Integration
-              </Link>
+      
 
-              <Link
-                to="/solutions/hospital-management"
-                onClick={closeMobileMenu}
-                className="text-sm font-medium text-[#374151]"
-              >
-                Healthcare
-              </Link>
+        <Link
+          to="/about"
+          onClick={closeMobileMenu}
+          className="border-b border-[#E5E7EB] py-4 text-sm font-semibold text-[#071A35]"
+        >
+          About
+        </Link>
 
-              <Link
-                to="/solutions/procurement"
-                onClick={closeMobileMenu}
-                className="text-sm font-medium text-[#2563EB]"
-              >
-                Procurement
-              </Link>
-
-              <Link
-                to="/about"
-                onClick={closeMobileMenu}
-                className="text-sm font-medium text-[#374151]"
-              >
-                About
-              </Link>
-
-              <Link
-                to="/contact"
-                onClick={closeMobileMenu}
-                className="mt-2 inline-flex w-fit rounded-full bg-[#071A35] px-6 py-3 text-sm font-semibold text-[#FFFFFF]"
-              >
-                Start a project
-              </Link>
-            </nav>
-          </div>
-        )}
-      </header>
+        <Link
+          to="/contact"
+          onClick={closeMobileMenu}
+          className="py-4 text-sm font-semibold text-[#071A35]"
+        >
+          Contact
+        </Link>
+      </nav>
+    </div>
+  )}
+</header>
 
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#071A35] text-[#FFFFFF]">
