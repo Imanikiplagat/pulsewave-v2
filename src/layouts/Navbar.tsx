@@ -142,7 +142,7 @@ export function Navbar() {
                               {/* Header */}
                               <div className="flex items-center justify-between px-2">
                                 <Link
-                                  to={`/${g.slug}`}
+                                  to={`/solutions/${g.slug}`}
                                   onClick={closeMega}
                                   className="text-xs font-bold uppercase tracking-widest text-[var(--dark-gray)] hover:text-[var(--navy)]"
                                 >
@@ -285,7 +285,7 @@ export function Navbar() {
                           <g.icon className="h-4 w-4 shrink-0 text-[var(--blue-brand)]" />
 
                           <Link
-                            to={`/${g.slug}`}
+                            to={`/solutions/${g.slug}`}
                             onClick={(e) => {
                               e.stopPropagation();
                               closeMobile();
@@ -314,7 +314,7 @@ export function Navbar() {
 
                         {/* Overview */}
                         <Link
-                          to={`/${g.slug}`}
+                          to={`/solutions/${g.slug}`}
                           onClick={closeMobile}
                           className="rounded-md px-3 py-1.5 text-xs font-semibold text-red"
                         >

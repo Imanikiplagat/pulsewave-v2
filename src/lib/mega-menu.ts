@@ -28,37 +28,37 @@ export const megaGroups: MegaGroup[] = [
     {
     key: "erp",
     title: "Enterprise ERP",
-    slug: "/erp",
+    slug: "erp",
     tagline: "One integrated backbone for the whole organisation.",
     icon: Layers,
     items: [
       {
         label: "Finance Management",
-        slug: "erp",
+        slug: "solutions/erp",
         hash: "overview",
         blurb: "Budgets, treasury and financial control",
       },
       {
         label: "Accounting",
-        slug: "erp",
+        slug: "solutions/erp",
         hash: "features",
         blurb: "Ledgers, reporting and reconciliation",
       },
       {
         label: "Asset Management",
-        slug: "erp",
+        slug: "solutions/erp",
         hash: "modules",
         blurb: "Register, track and manage assets",
       },
       {
         label: "Human Resource Management",
-        slug: "erp",
+        slug: "solutions/erp",
         hash: "modules",
         blurb: "People operations and payroll",
       },
       {
         label: "Fleet Management",
-        slug: "erp",
+        slug: "solutions/erp",
         hash: "overview",
         blurb: "Vehicles, fuel and driver management",
       },
@@ -68,7 +68,7 @@ export const megaGroups: MegaGroup[] = [
 {
   key: "revenue",
   title: "Revenue Management",
-  slug: "/revenue-management",
+  slug: "revenue-management",
   tagline:
     "Digitized revenue collection and citizen-facing services.",
   icon: Receipt,
