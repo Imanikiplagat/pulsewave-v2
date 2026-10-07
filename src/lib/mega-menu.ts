@@ -34,31 +34,31 @@ export const megaGroups: MegaGroup[] = [
     items: [
       {
         label: "Finance Management",
-        slug: "solutions/erp",
+        slug: "erp",
         hash: "overview",
         blurb: "Budgets, treasury and financial control",
       },
       {
         label: "Accounting",
-        slug: "solutions/erp",
+        slug: "erp",
         hash: "features",
         blurb: "Ledgers, reporting and reconciliation",
       },
       {
         label: "Asset Management",
-        slug: "solutions/erp",
+        slug: "erp",
         hash: "modules",
         blurb: "Register, track and manage assets",
       },
       {
         label: "Human Resource Management",
-        slug: "solutions/erp",
+        slug: "erp",
         hash: "modules",
         blurb: "People operations and payroll",
       },
       {
         label: "Fleet Management",
-        slug: "solutions/erp",
+        slug: "erp",
         hash: "overview",
         blurb: "Vehicles, fuel and driver management",
       },
