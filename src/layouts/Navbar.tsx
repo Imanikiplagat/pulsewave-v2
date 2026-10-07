@@ -1,12 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
-import {
-  Menu,
-  X,
-  ChevronDown,
-  ArrowRight,
-  ChevronRight,
-} from "lucide-react";
+import {  Menu,  X,  ChevronDown,  ArrowRight,  ChevronRight,} from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { Logo } from "@/components/brand/logo";
 import { megaGroups } from "@/lib/mega-menu";
@@ -51,9 +45,7 @@ export function Navbar() {
       }`}
     >
       <div className="container-page flex h-16 items-center justify-between gap-4">
-        <Logo />
-
-        {/* ================= DESKTOP NAV ================= */}
+        <Logo />        
         <nav className="hidden items-center gap-1 lg:flex">
           <div
             className="relative"
@@ -312,7 +304,7 @@ export function Navbar() {
                         {g.items.map((it) => (
                           <Link
                             key={`${g.key}-${it.label}`}
-                            to={`/${it.slug}#${it.hash}`}
+                            to={`/solutions/${it.slug}#${it.hash}`}
                             onClick={closeMobile}
                             className="rounded-md px-3 py-2 text-sm text-[var(--dark-gray)] hover:bg-white"
                           >
