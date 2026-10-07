@@ -25,23 +25,22 @@ export type MegaGroup = {
 };
 
 export const megaGroups: MegaGroup[] = [
-  // 1. ENTERPRISE ERP
-  {
+    {
     key: "erp",
     title: "Enterprise ERP",
-    slug: "erp",
+    slug: "/erp",
     tagline: "One integrated backbone for the whole organisation.",
     icon: Layers,
     items: [
       {
         label: "Finance Management",
-        slug: "finance",
+        slug: "erp",
         hash: "overview",
         blurb: "Budgets, treasury and financial control",
       },
       {
         label: "Accounting",
-        slug: "finance",
+        slug: "erp",
         hash: "features",
         blurb: "Ledgers, reporting and reconciliation",
       },
@@ -53,13 +52,13 @@ export const megaGroups: MegaGroup[] = [
       },
       {
         label: "Human Resource Management",
-        slug: "hr-payroll",
-        hash: "overview",
+        slug: "erp",
+        hash: "modules",
         blurb: "People operations and payroll",
       },
       {
         label: "Fleet Management",
-        slug: "fleet-management",
+        slug: "erp",
         hash: "overview",
         blurb: "Vehicles, fuel and driver management",
       },
@@ -77,31 +76,31 @@ export const megaGroups: MegaGroup[] = [
   items: [
     {
       label: "Revenue Collection",
-      slug: "solutions/revenue-management",
+      slug: "revenue-management",
       hash: "revenue-collection",
       blurb: "Automated revenue collection and monitoring",
     },
     {
       label: "Billing & Invoicing",
-      slug: "solutions/revenue-management",
+      slug: "revenue-management",
       hash: "billing-invoicing",
       blurb: "Generate and manage revenue invoices",
     },
     {
       label: "Citizen Portal",
-      slug: "solutions/revenue-management",
+      slug: "revenue-management",
       hash: "citizen-portal",
       blurb: "Self-service for residents and businesses",
     },
     {
       label: "Digital Payments",
-      slug: "solutions/revenue-management",
+      slug: "revenue-management",
       hash: "digital-payments",
       blurb: "Mobile money, card and bank payments",
     },
     {
       label: "USSD Services",
-      slug: "solutions/revenue-management",
+      slug: "revenue-management",
       hash: "ussd",
       blurb: "Accessible services without internet",
     },
